@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+.line {
+  width: 97%;
+  position: relative;
+  left: 3vh;
+  margin: 1vh 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fruit-cont {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  width: 70vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bonus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.bonus .search {
+  display: flex;
+  border: 2px solid grey;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bonus .search input[type=text] {
+  height: 3vh;
+  width: 13vw;
+  padding: 0 1vh;
+  border: none;
+  outline: none;
+}
+
+.bonus .search svg {
+  font-size: 2.7vh;
+}
+
+.bonus .filters {
+  width: 21vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 1vh 0 0 0;
+}
+
+.bonus .filters button.active {
+  width: 6vw;
+  height: 5vh;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: #395ab5;
+  color: aliceblue;
+}
+
+.bonus .filters button {
+  width: 6vw;
+  height: 5vh;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 8px;
+  background: aliceblue;
+  color: #395ab5;
 }

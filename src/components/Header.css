@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header h1 {
+    margin: 4vh 0 1vh 10vh;
+    color: #5960bb;
+}
+
+.header button {
+    margin: 4vh 3vh 0 0;
+    font-size: 5vh;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header .cart-item {
+    position: absolute;
+    right: 3vh;
+    top: 3vh;
+    background: #283fb4;
+    border-radius: 50%;
+    width: 3vh;
+    color: aliceblue;
+    height: 3vh;
+    text-align: center;
+}
