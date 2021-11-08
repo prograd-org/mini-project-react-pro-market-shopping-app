@@ -11,7 +11,8 @@ export default class App extends Component {
     this.state = {
       marketData: [],
       type: "all",
-      search: ""
+      search: "",
+      cartData: []
     }
   }
   componentDidMount = () => {
@@ -29,10 +30,15 @@ export default class App extends Component {
         console.log(this.state.marketData);
       })
   }
+  addToCart = (e) => {
+    this.setState({
+      cartData: [...this.state.cartData, e]
+    })
+  }
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header cartItems={this.state.cartData} />
         <hr className="line" />
         <div className="bonus">
           <div className="search">
@@ -59,6 +65,7 @@ export default class App extends Component {
                       price={item.price}
                       desc={item.desc}
                       id={item.id}
+                      cart={this.addToCart}
                     />
                   })
                 :
@@ -71,6 +78,8 @@ export default class App extends Component {
                     name={item.name}
                     price={item.price}
                     desc={item.desc}
+                    id={item.id}
+                    cart={this.addToCart}
                   />
                 })
             }

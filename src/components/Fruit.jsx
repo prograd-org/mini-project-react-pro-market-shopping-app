@@ -9,6 +9,11 @@ export default class Fruit extends Component {
             isConfirm: false
         }
     }
+    confirmedOrder = () => {
+        this.setState({ isConfirm: !this.state.isConfirm })
+        let obj = { img: this.props.img, name: this.props.name, price: this.props.price, quantity: document.getElementById("quantity" + this.props.id).value }
+        this.props.cart(obj)
+    }
     render() {
         return (
             <>
@@ -19,7 +24,7 @@ export default class Fruit extends Component {
                     <div className="btns">
                         <button onClick={() => { document.getElementById("quantity" + this.props.id).value = (+document.getElementById("quantity" + this.props.id).value) + 1 }}>+</button>
                         <input type="number" min="1" max="99" defaultValue="1" id={"quantity" + this.props.id} />
-                        <button onClick={() => { document.getElementById("quantity" + this.props.id).value = (+document.getElementById("quantity" + this.props.id).value === 0) ? 0 : (+document.getElementById("quantity" + this.props.id).value) - 1 }}>-</button>
+                        <button onClick={() => { document.getElementById("quantity" + this.props.id).value = (+document.getElementById("quantity" + this.props.id).value === 1) ? 1 : (+document.getElementById("quantity" + this.props.id).value) - 1 }}>-</button>
                     </div>
                     <button onClick={() => this.setState({ isConfirm: !this.state.isConfirm })}>Add to cart</button>
                 </div>
@@ -30,7 +35,7 @@ export default class Fruit extends Component {
                                 <p>Waiting for your confirmation!!</p>
                                 <div className="btns">
                                     <button onClick={() => this.setState({ isConfirm: !this.state.isConfirm })}>Cancel</button>
-                                    <button>Ok</button>
+                                    <button onClick={this.confirmedOrder}>Ok</button>
                                 </div>
                             </div>
                         </div>
