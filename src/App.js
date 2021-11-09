@@ -48,7 +48,9 @@ export default class App extends Component {
 
   render() {
     if (this.state.marketData.length === 0) {
-      return "loading"
+      return <div className="load">
+        <img src="https://raw.githubusercontent.com/AaryanShaikh/mini-project-react-pro-market-shopping-app/main/src/load.gif" alt="" />
+      </div>
     } else {
       return (
         <div className="App">

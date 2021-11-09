@@ -77,3 +77,8 @@
     border: solid;
     padding: 1vh;
 }
+
+.cart-cont .cart .btns {
+    display: flex;
+    justify-content: space-evenly;
+}

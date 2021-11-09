@@ -54,7 +54,10 @@ export default class Header extends Component {
                                             return item.total
                                         }).reduce((a, b) => a + b)
                                 }</p>
-                                <button onClick={this.remFromCart}>Buy now</button>
+                                <div className="btns">
+                                    <button onClick={() => this.setState({ showCart: !this.state.showCart })}>Cancel</button>
+                                    <button onClick={this.remFromCart}>Buy now</button>
+                                </div>
                             </div>
                         </div>
                         : ""
