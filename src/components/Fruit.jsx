@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './Fruit.css'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default class Fruit extends Component {
     constructor() {
@@ -9,11 +11,18 @@ export default class Fruit extends Component {
             isConfirm: false
         }
     }
+
     confirmedOrder = () => {
         this.setState({ isConfirm: !this.state.isConfirm })
-        let obj = { img: this.props.img, name: this.props.name, price: this.props.price, quantity: document.getElementById("quantity" + this.props.id).value }
+        let total = this.props.price * document.getElementById("quantity" + this.props.id).value
+        let obj = { id: this.props.id, img: this.props.img, name: this.props.name, price: this.props.price, quantity: document.getElementById("quantity" + this.props.id).value, total: total }
         this.props.cart(obj)
+        toast.info("Item added to cart!", {
+            position: toast.POSITION.BOTTOM_CENTER,
+            theme: "dark"
+        });
     }
+
     render() {
         return (
             <>
